@@ -10,4 +10,4 @@ jobs:
 #судя по докам это нужная штука
      - uses: actions/checkout@v5
      - run: mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam < sqls/ram2.sql >> select
-     - run: cat select
+     - run: tail select
