@@ -1,0 +1,13 @@
+name: ilovepostgresql
+on:
+  push:
+    path:
+     - sqls/ram1.sql
+jobs:
+  jagvetinte:
+    runs-on: ubuntu-latest
+    steps:
+#судя по докам это нужная штука
+     - uses: actions/checkout@v5
+     - run: mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam < sqls/ram1.sql >> select
+     - run: cat select
